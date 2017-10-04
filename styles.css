@@ -1,0 +1,202 @@
+
+/*p{line-height: 0.5} stuff below is for input slider */
+h3 {
+  text-align: center;
+}
+ datalist{background-color: darkblue;}
+ 
+/*if I can get the color to work */
+       .chosen {
+  color: #fff;
+  background-color: #c00;
+}
+
+/* .pure-group{
+align-items: center;
+
+align-content: center;
+ }*/
+
+/*.descriptors1 {
+align-content: center;
+	align-items: center;
+	
+}*/
+
+/*form{
+	align-content: center;
+	align-items: center;
+}
+ .feedback1{
+align-content: center;
+align-items: center;
+
+ }*/
+ #noiseInputId {
+     height: 60px;
+    
+ }
+ #noiseOutputId {
+    border: 1px solid black; 
+     height: 1em;
+     width: 1em;
+     padding: 5px;
+ }
+
+ .feedback1 {
+    display: flex;
+    flex-direction:column-reverse;
+    /*border: 2px solid white; */   
+    width: 521px;
+    height: 100x;
+  	margin: 1.5px;
+    padding: 1.5px;
+ }
+.descriptors1{
+ display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  align-items: center;
+     margin: 2px;
+    padding: 2px;
+	
+}
+
+
+
+#noise2 {
+
+  display: flex;
+  align-items: center;
+  top: 5px;
+  width: 500px; /* make sure this is the same as table width for good value alignment */
+  height: 5px;
+  margin: 2px;
+  padding: 10px;
+   
+   
+}
+
+/*stuff below from jsfiddle table*/
+
+#descriptors2{
+ display: flex;
+    
+    justify-content: space-between;
+  align-items: center;
+     margin: 2px;
+    padding: 2px;
+	
+}
+table, td {
+    border: 1px solid black;
+}
+
+
+table{
+    table-layout: fixed;
+    width: 520px;
+}
+
+td{width: 70px;}
+tr {height: 50px;}
+td, th {text-align: center;}
+#noise3 {
+display: flex;
+align-items: center;
+  top: 5px;
+  width: 510px; /*make sure this is the same as table width for good value alignment */
+  height: 5px;
+ 	margin: 2px;
+    padding: 1px;
+}
+ #feedback2 {
+    display: flex;
+    flex-direction:column;
+    /*border: 10px solid black;   */ 
+    width: 521px;
+    height: 100x;
+  margin: 1.5px;
+    padding: 1.5px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*stuff below is for drag n drop*/
+span {
+ /* background-color:#1f8dd6;*/
+background-color:lightblue;
+
+}
+li{
+    font-size: 2em;
+  margin: 10px;
+  line-height: 1.2em;
+text-align:center;
+list-style-type: decimal;  
+}
+
+
+#li10{
+  
+ display:inline; 
+  background-color:lightblue;
+}
+/* this is fro0m the github styles : https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css;*/
+body {
+  margin: 2em;
+}
+aside {
+    background: #1f8dd6; /* same color as selected state on site menu */
+    padding: 0.3em 1em;
+    border-radius: 3px;
+    color: #fff;
+    margin-bottom: 2em;
+}
+textarea {
+  width: 100%;
+}
+.content-head {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 2em 0 1em;
+}
+.is-center {
+  text-align: center;
+}
+.button-success {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(28, 184, 65); /* this is a green */
+}
+.button-xlarge {
+  font-size: 125%;
+}
+
+button {
+    display: table;
+    margin: 0 auto;
+}
+#name, #email {
+  width: 50%;
+}
+
+

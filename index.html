@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="contact form example">
+    
+ <title>Crackle Hearing Test</title>
+
+      <script type= 'text/javascript'
+      src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+
+</head>
+
+<body>
+  <h2 class="content-head is-center">Jet Crackle Rating</h2>
+  <aside>
+      		<p>Welcome! For this listening test, You will hear various types of noises.
+				The following is a scientist's description of these noises:</p> 
+				<p><i>“The large jet transports of the first generation and high performance military aircraft are, at full power, particularly prone to producing sudden spasmodic bursts of a rasping fricative sound not dissimilar to that made by the irregular tearing of paper. Some observers liken it to the sound of an electric arc welder or of a badly connected loud speaker; others liken it to the spitting of water added to extremely hot fat. It is a startling staccato of cracks and bangs, and its onomatope, ‘crackle’, conveys a subjectively accurate impression.” </i>
+(Williams, J., Simson, J., & Virchis, V. (1975). ‘Crackle’: An annoying component of jet noise.)</p>
+		<!--  <p>Listen to <em>all</em> the sound clips</p>
+		<p>and rate each one based on a <b><em>1-5 scale:</em></b></p> 
+		<p>with <b><em>1</em></b> being <b>no crackle</b> and <b><em>5</em></b> being <b>intense crackle</b>.</p>  -->
+		
+   </aside>
+
+<!-- START HERE -->
+   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   <!-- Style The Contact Form However You Prefer -->
+   <link rel="stylesheet" type= "text/css" href="styles.css" />
+  
+
+
+
+<!-- This is from drag n drop in thimble -->
+
+   
+    <div id="holder"></div>
+<!--    this btn below links to fxn-->
+   <!--  <button id="myDiv">Shuffle</button> -->
+    
+
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+   <!--  <script src="script.js"></script> -->
+<!--       <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"> </script>
+
+    <script>var el = document.getElementById('items');
+      var sortable = Sortable.create(el);</script> -->
+ 
+
+
+  <form id="gform" method="POST" class="pure-form pure-form-stacked" style="display: block;"
+  action="https://script.google.com/macros/s/AKfycbzfKPrNb4bSY2bMaqmVP39J-gEjN3e2bmmMsRxL28Zu5AXLlzI/exec">
+
+
+    <!-- change the form action to your script url -->
+	<div id=emailformvalid style="display: none;">
+     <fieldset class="pure-group">
+      <label for="email"> Email Address:</label>
+      <input id="email" name="email" type="email" value="pau616@gmail.com"
+      required placeholder="your.name@email.com"/>
+      <span id="email-invalid" style="display:none">
+        Must be a valid email address</span>
+    </fieldset> 
+    </div>
+
+<button id = "start3">Start</button>
+<div id = "minus0" style="display: none;">
+
+<p> First, play this calibration sound: </p>
+<audio  class = "audio0" controls="visible" controlsList="nodownload" preload="true" src="75dBcaltone.wav"></audio>
+
+ <button id  = "start2">Next</button>
+ </div>
+
+<div id = "div0" style="display: none;"> 
+
+    <fieldset class="pure-group">
+      <label for="name">Subject ID #: </label>
+      <input id="name" name="subjectid" placeholder="Given by test administrator" />
+    </fieldset>
+
+
+	<!-- put this before subj ID -->
+
+<button id = "start1">Next</button>
+</div>    
+
+<div id=div1 style="display: none;">
+ <p>Order the sound files into <strong>descending order</strong> from <strong>intense crackle</strong> to <strong>no crackle.</strong> Listen to the files by pressing the play/pause button. You may select a file to reorder it by touching anywhere to the left of the letters, or right of the audio bars.  </p>
+    
+	<ul id="holder1"></ul>
+<!--    </div>-->
+   
+    <input id="order1" name="order1" type="text" style="display: none"/>  
+    
+ 	<p> When you are satisfied with the order, click Next to proceed.</p>
+ 	<button id="next1">Next</button>
+
+ 	<!-- This will show the order string -->
+ 		<fieldset class="pure-group" style="display: none;">
+	 		<label for="name">Final Ordering: </label> 
+	    	<input id="order2" name="order2" type="text" />   
+        </fieldset> 
+ </div>
+
+<div id="div2" style ="display: none;" >
+<div id ="holder2">
+<p> Now you will listen to each sound clip and rate it based on the criteria given: from no crackle to intense crackle. </p>
+
+ <input id="order3" name="order3" type="text" style="display: none"/>  
+   <!--  <fieldset class="pure-group">
+      <label for="message">Sound 1: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_50P_117_090D_1000R.wav"></audio>
+          
+        <!--putting in the horizontal slider here -->
+  <datalist id="Z">
+    <option>1</option>
+    <option>10</option>
+    <option>20</option>
+    <option>30</option>
+    <option>40</option>
+    <option>50</option>
+    <option>60</option>
+  </datalist>
+
+  <div id = "holder3">
+<!--        <div class = "feedback1">
+      <input type="range"  name="slider1" id="noise1" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+       
+        
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    
+    <div>
+  
+  <datalist id="Z">
+    <option>1</option>
+    <option>10</option>
+    <option>20</option>
+    <option>30</option>
+    <option>40</option>
+    <option>50</option>
+    <option>60</option>
+  </datalist>
+</div>
+    </fieldset> -->
+
+ 
+
+<!--     <fieldset class="pure-group">
+      <label for="message">Sound 2: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_50P_117_150D_1000R.wav"></audio>
+          
+       <div class = "feedback1">
+      <input type="range"  name="slider2" id="noise2" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+       
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+
+    </fieldset>
+    
+    <fieldset class="pure-group">
+      <label for="message">Sound 3: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_50P_117_160D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider3" id="noise3" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+      
+        
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+  
+     
+    <fieldset class="pure-group">
+      <label for="message">Sound 4: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_75P_118_130D_1000R.wav"></audio>
+          
+            <div class = "feedback1">
+      <input type="range"  name="slider4" id="noise4" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+       
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+    
+        <fieldset class="pure-group">
+      <label for="message">Sound 5: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_75P_118_160D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider5" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+  
+        
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+
+
+
+	 <fieldset class="pure-group">
+      <label for="message">Sound 6: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_100P_119_030D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider6" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+  
+        
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	
+	 <fieldset class="pure-group">
+      <label for="message">Sound 7: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_100P_119_070D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider7" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+     
+        
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 8: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_100P_119_145D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider8" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+        
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 9: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_130P_120_090D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider9" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+      
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 10: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_130P_120_120D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider10" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+              
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 11: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_130P_120_155D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider11" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+             
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 12: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_150P_121_070D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider12" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+             
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 13: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_150P_121_110D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider13" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+           
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 14: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_150P_121_125D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider14" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+              
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 15: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_150P_121_145D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider15" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+            
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 16: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_150P_121_150D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider16" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+              
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+	 <fieldset class="pure-group">
+      <label for="message">Sound 17: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_150P_121_160D_1000R.wav"></audio>
+          
+              <div class = "feedback1">
+      <input type="range"  name="slider17" id="noise5" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+              
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+    </fieldset>
+
+        <fieldset class="pure-group">
+      <label for="message">Sound 18: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_F18.wav"></audio>
+          
+       <div class = "feedback1">
+      <input type="range"  name="slider18" id="noise2" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+       
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+
+    </fieldset>
+        <fieldset class="pure-group">
+      <label for="message">Sound 19: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_F18_fc7000.wav"></audio>
+          
+       <div class = "feedback1">
+      <input type="range"  name="slider19" id="noise2" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+       
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+
+    </fieldset>
+        <fieldset class="pure-group">
+      <label for="message">Sound 20: </label>
+   
+     <audio id="sound" controls="visible" preload="true" src="audio0/40sones_F18_fc10000.wav"></audio>
+          
+       <div class = "feedback1">
+      <input type="range"  name="slider20" id="noise2" value="30" min="5" max="55" oninput="noiseout2.value = noise2.value" list="Z">
+       
+        <div class  = "descriptors1">
+            <p>intense crackle</p> 
+            <p>continuous crackle</p>
+            <p>sporadic crackle</p>
+            <p> rough noise no crackle</p>
+            <p>smooth noise no crackle</p>
+        </div>
+    </div>
+
+    </fieldset>
+
+     -->
+     </div>
+
+	
+	<!-- from jsfiddle table -->
+	
+	<!--  <div id = "feedback2">
+      
+        
+        <div id  = "descriptors2">
+          <table>
+            <tr>
+            <td>smooth noise no crackle </td>
+            <td>rough noise no crackle </td>
+            <td>sporadic crackle </td>
+            <td>continuous crackle </td>
+            <td>intense crackle </td>
+            </tr>
+          </table>
+		  
+		     </div>
+      <input type="range"  name="slider24" id="noise3" value="30" min="5" max="55"  list="Z1" >
+        
+        
+    </div>-->
+          
+            <datalist id="Z1">
+    <option>1</option>
+	<option>3</option>
+	<option>5</option>
+	<option>7</option>
+	<option>9</option>
+	<option>11</option>
+    <option>13</option>
+	<option>15</option>
+	<option>17</option>
+	<option>19</option>
+	<option>21</option>
+	<option>23</option>
+    <option>25</option>
+	<option>27</option>
+	<option>29</option>
+	<option>31</option>
+	<option>33</option>
+	<option>35</option>
+    <option>37</option>
+	<option>39</option>
+	<option>41</option>
+	<option>43</option>
+	<option>45</option>
+	<option>47</option>
+    <option>49</option>
+	<option>51</option>
+	<option>53</option>
+	<option>55</option>
+	<option>57</option>
+	<option>59</option>
+    <option>61</option>
+  </datalist>
+        
+     
+	
+	
+	
+	
+	
+	
+	
+	  
+</div>   
+<p>When you are finished rating all the sounds, click the Submit button below. *(Only click Submit once).</p>
+ 
+     <!-- 
+    <fieldset class="pure-group">
+      <label for="color">Favourite Color: </label>
+      <input id="color" name="color" placeholder="green" />
+    </fieldset>
+    put in drag and drop right here
+	
+
+<!-- Rubaxa Sortable JS library test -->
+
+
+	  <script src="https://rubaxa.github.io/Sortable/Sortable.js"></script>
+  
+    <script>//Sortable.create(holder, {}); this works for div childs
+      var el = document.getElementById('holder1');
+      var sortable = Sortable.create(el);
+    </script>
+
+
+    <button class="button-success pure-button button-xlarge">
+      <i class="fa fa-paper-plane"></i>&nbsp;Submit</button>
+
+  </form>
+</div>
+
+  <!-- above-end of div2...Customise the Thankyou Message People See when they submit the form: -->
+  <div style="display:none;" id="thankyou_message">
+    <h2><em>Thank you</em> for completing the survey!
+      Your response has been recorded!</h2>
+  </div>
+
+  
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"> </script> -->
+    <script src = "https://rawgit.com/bevacqua/dragula/master/dist/dragula.js"></script>
+
+     <script src = "https://rawgit.com/bevacqua/dragula/master/dist/dragula.css"></script>
+
+    <script>var el = document.getElementById('items');
+      var sortable = Sortable.create(el);</script>
+ 
+  
+  <!-- Submit the Form to Google Using "AJAX" ...do i need this?  -->
+  <script data-cfasync="false" type="text/javascript" src="hearing.js"></script>
+  <!-- <script data-cfasync="false" type="text/javascript"
+  src="/form-submission-handler.js"></script> -->
+<!-- END -->
+
+
+</body>
+</html>
