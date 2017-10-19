@@ -77,6 +77,12 @@ align-items: center;
    
 }
 
+/*for the p header to move right on drag n drop*/
+.hiloheader {
+   position: relative;
+    left: 800px;
+}
+
 /*stuff below from jsfiddle table*/
 
 #descriptors2{
@@ -134,14 +140,16 @@ align-items: center;
 
 
 
-
+#holder1 {
+  color: white;
+}
 
 
 
 /*stuff below is for drag n drop*/
 span {
  /* background-color:#1f8dd6;*/
-background-color:lightblue;
+/*background-color:lightblue;*/
 
 }
 li{
@@ -163,7 +171,7 @@ body {
   margin: 2em;
 }
 aside {
-    background: #1f8dd6; /* same color as selected state on site menu */
+    background: #1f8dd6;/* same color as selected state on site menu */
     padding: 0.3em 1em;
     border-radius: 3px;
     color: #fff;
@@ -199,4 +207,141 @@ button {
   width: 50%;
 }
 
+
+
+/* dragula-specific example page styles */
+.wrapper {
+  display: table;
+  height: 300px;
+    max-width: 760px;
+    min-height: 435px !important;
+    min-width: 400px;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:40px;
+}
+.cont-dragula {
+  display: table-cell;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 50%;
+}
+.cont-dragula:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/*
+ * note that styling gu-mirror directly is a bad practice because it"s too generic.
+ * you"re better off giving the draggable elements a unique class and styling that directly!
+ */
+.cont-dragula > div,
+.gu-mirror {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.4s ease-in-out;
+}
+.cont-dragula > div {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.cont-dragula > li {
+  margin: 5px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.4s ease-in-out;
+}
+
+.cont-dragula > li {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.gu-mirror {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+.cont-dragula .ex-moved {
+  background-color: #e74c3c;
+}
+.cont-dragula.ex-over {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#left-lovehandles > div,
+#right-lovehandles > div {
+  cursor: initial;
+}
+.handle {
+  padding: 0 5px;
+  margin-right: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: move;
+}
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+.wrapper {
+  background-color:  #1f8dd6;/*#3139DC;*//*#1f8dd6; *//*#58a9ce;*/
+  max-width: 760px;
+}
+
+
+.promo {
+  margin-bottom: 0;
+  font-style: italic;
+  padding: 10px;
+  background-color: #ff4020;
+  border-bottom: 5px solid #c00;
+}
+
+a {
+  font-weight: bold;
+}
+a,
+a:hover {
+  color: #ecf0f1;
+}
+
+
+.parent {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 50px 0;
+  padding: 20px;
+}
+
+
+.gh-fork {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.parent > label {
+    color: #fff;
+}
 
